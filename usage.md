@@ -1,6 +1,6 @@
 # Usage of Psynteract
 
-After [installation](../installation.md), the remaining task for any
+After [installation](installation.md), the remaining task for any
 experimenter using psynteract is to build the study
 
 ## Basic Features
