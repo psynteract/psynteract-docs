@@ -1,4 +1,4 @@
-# Psynteract documentation
+#Psynteract documentation
 
 The repository contains documentation for the *Psynteract* libraries,
 both the [OpenSesame](https://github.com/psynteract/psynteract-os) and
@@ -9,7 +9,7 @@ You will find additional information regarding:
 * [Installation](installation.md)
 * [Usage](usage.md)
 
-## Finding additional help
+##Finding additional help
 
 For all questions regarding the use of *OpenSesame*, you will find the experts
 directly in the [OpenSesame
