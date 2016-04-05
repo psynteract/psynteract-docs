@@ -53,7 +53,13 @@ In each case, after copying the relevant files and restarting OpenSesame, you sh
 
 ### Pure Python
 
-If you are using the psynteract library from python code, for example through PsychoPy, ExPyriment or a similar library, please make sure that the psynteract folder is on your `pythonpath` so that the library is available from Python.
+#### Via `pip`
+
+The easiest way to install the psynteract python library system-wide is to install it via the [pip package installer](https://pip.pypa.io). To do so, please open a terminal window and enter `pip install [psynteract-package-url]`, where the url points to the [latest release](https://github.com/psynteract/psynteract-py/releases) of the `psynteract-py` package. The exact command with the latest URL is also available in the [readme file](https://github.com/psynteract/psynteract-py/blob/master/README.rst) of said package.
+
+#### Per drag-and-drop
+
+If you are using the psynteract library from python code, for example through PsychoPy, ExPyriment or a similar library, another simple way to include psynteract is to make sure that the psynteract folder is on your `pythonpath` so that the library is available from Python.
 
 The easiest way to ensure that the library is available is to import it manually in your experiment's code with the `site` package:
 
@@ -62,7 +68,9 @@ import site
 site.addsitedir('[path_to_folder_containing_psynteract]')
 ```
 
-Please make sure that the directory path you specify at this point does not include the psynteract directory itself, but rather the folder containing the psynteract package (i.e. if you navigate to the path specified in the addsitedir command, you should see a directory named psynteract, which in turn contains a file named `__init__.py` as well as several directories. You should *not* see these files directly).
+Please make sure that the directory path you specify at this point does not include the psynteract directory itself, but rather the folder containing the psynteract package (i.e. if you navigate to the path specified in the `addsitedir` command, you should see a directory named psynteract, which in turn contains a file named `__init__.py` as well as several directories. You should *not* see these files directly).
+
+#### Checking an installation
 
 To validate your installation, see if you can run `from psynteract import Connection` either from within your code or from the python prompt.
 
