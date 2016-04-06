@@ -1,7 +1,8 @@
 # Usage of Psynteract
 
 After [installation](installation.md), the remaining task for any
-experimenter using psynteract is to build the study
+experimenter using psynteract is to build the study. This is what we cover
+in this part of the documentation.
 
 ## Basic Features
 
@@ -17,15 +18,14 @@ is the core of the library.
 
 #### OpenSesame
 
-<img src="../OpenSesame plugin/plugins/niente_connect/niente_connect_large.png"
+<img src="https://raw.githubusercontent.com/psynteract/psynteract-os/master/plugins/psynteract_connect/psynteract_connect_large.png"
 style="float: right"> In OpenSesame, you can connect to the server by dragging
 the connection item into your experiment. You'll probably want to place it
-toward the beginning of the study, so that you can access it afterward. All
-other functions depend on a connection having been made initially.
+toward the beginning of the study, so that you can use the connection afterward.
+All other functions depend on a connection having been made initially.
 
 When the item is run, the client will wait for the session to be started via the
-control panel before continuing with the experiment. Any preceding screen will
-remain visible
+control panel before continuing with the experiment.
 
 #### Python
 
@@ -66,25 +66,63 @@ The __database name__ is also central. Because a server with CouchDB can
 potentially store many separate databases, the client needs to know which one to
 use. You will have set this up during the installation.
 
+The __design__ option determines how the users are allocated to groups. Choosing
+the *stranger* design allocates clients into groups at random, and a
+reassignment of groups will again result in a random allocation. The *perfect
+stranger* design also allocates clients at random initially, but thereafter
+ensures that no two clients are in the same group again. Depending on the other
+design parameters chosen, the perfect stranger design requires significantly
+more participants overall.
+
+The __group size__ defines the number of clients in a group.
+
 ##### Optional
+
+__Roles__ can be assigned to the members of a group, and will be distributed
+to all clients.
+
+__Offline mode__ enables you to test your experiment without connecting to an
+actual server. This means that the client will never wait for others, and that
+it will use dummy data in lieu of actual partners' responses. In OpenSesame,
+the client's own data will be used as a stand-in for the data from connected
+clients. In Python, it is possible to define dummy data that are substituted
+during calls to `get` (see below).
+
+__Ghost mode__ enables Psynteract to deal with numbers of participants that
+cannot be split evenly across the group size specified. Using this mode, excess
+participants become 'ghosts' and are assigned a properly allocated participant
+to 'haunt'. That is, the 'ghosted' clients will receive all the input that this
+participant experiences from his or her fellow group members, but the 'ghosts'
+will not themselves affect the other participants -- the interaction is
+unidirectional.
+
+The number of __groupings needed__ represents the number of unique groupings
+needed by the experiment (as an integer). If this argument is supplied, and the
+number of groupings cannot be supplied (because there are to few participants to
+combine into groups), a warning is shown on the control panel. By default,
+only a single grouping will be generated.
+
+#### Python-only
 
 The __client name__ is available to help you identify connected clients more
 easily. Any value set here is visible on the backend in the "name" column. The
-setting has no further technical relevance.
+setting has no further technical relevance. In OpenSesame, this is automatically
+generated from the user ID entered when starting the experiment.
 
 __Initial data__ can be used to pass in any data that should be available in all
 clients from the get-go. For example, if you would like to later append choices
 to a list, you can create the list here. This is automatically taken care of in
 OpenSesame.
 
-__Offline mode__ enables you to test your experiment without connecting to an
-actual server. This means that the client will never wait for others, and that
-it will use dummy data in lieu of actual partners' responses.
+#### OpenSesame-only
 
-The number of __groupings needed__ represents the number of unique groupings
-needed by the experiment (as an integer). If this argument is supplied, and the
-number of groupings cannot be supplied (because there are to few participants to
-combine into groups), a warning is shown on the control panel.
+__Identical random seeds__ can be applied to all clients to ensure that any
+randomization is performed in synchrony. The random seed is calculated from
+the session id.
+
+OpenSesame can be instructed to __display a message while waiting for the
+session to start__. If this is not set, any preceding screen will remain
+visible.
 
 ### Push
 
