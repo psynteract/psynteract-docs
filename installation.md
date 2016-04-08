@@ -4,7 +4,7 @@ Before psynteract can be used, it must be setup on every computer on which the e
 
 We have tried to make the installation as easy as possible -- in a medium-sized lab with a dozen seats, deployment should not take longer than 45 minutes to an hour, and for a local test installation, you should be up and running within 20 minutes at most.
 
-The following documentation will walk you through the installation of the [Server](#Server), which is a computer that coordinates the activity of all participants, and each [Client](#Client), that is, each computer which is used by participants.
+The following documentation will walk you through the installation of the [Server](#couchdb-server), which is a computer that coordinates the activity of all participants, and each [Client](#client), that is, each computer which is used by participants.
 
 ----
 
