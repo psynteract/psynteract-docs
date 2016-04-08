@@ -1,6 +1,6 @@
 # Push
 
-<img src="https://raw.githubusercontent.com/psynteract/psynteract-os/master/plugins/niente_push/niente_push_large.png" align="right">
+<img src="https://raw.githubusercontent.com/psynteract/psynteract-os/master/plugins/psynteract_push/psynteract_push_large.png" align="right">
 
 Once a connection has been built, it can be used to share data between connected
 clients. A **push** command transmits the local data to the server, where it can

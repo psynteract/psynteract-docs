@@ -1,6 +1,6 @@
 # Await
 
-<img src="https://raw.githubusercontent.com/psynteract/psynteract-os/master/plugins/niente_await/niente_await_large.png" align="right">
+<img src="https://raw.githubusercontent.com/psynteract/psynteract-os/master/plugins/psynteract_await/psynteract_await_large.png" align="right">
 
 Another vital component of an interactive experiment is temporal synchronization
 -- all participants should be at the same stage throughout the experiment. From

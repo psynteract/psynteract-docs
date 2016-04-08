@@ -1,6 +1,6 @@
 # Get
 
-<img src="https://raw.githubusercontent.com/psynteract/psynteract-os/master/plugins/niente_get/niente_get_large.png" align="right">
+<img src="https://raw.githubusercontent.com/psynteract/psynteract-os/master/plugins/psynteract_get/psynteract_get_large.png" align="right">
 
 The counterpart of the push command is **get**, which downloads data from the
 server for local use.
