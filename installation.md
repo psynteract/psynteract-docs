@@ -12,7 +12,7 @@ The following documentation will walk you through the installation of the [Serve
 
 The server is the computer through which all communication during the experiment takes place, and which hosts the control panel for the experimenter.
 
-The foundation underlying the server is an instance of [Apache CouchDB](https://couchdb.apache.org), a powerful database engine. CouchDB is open source, and freely available for all major platforms. We recommend that you install it on a computer within your lab's network; any typical desktop machine with a stable network connection (for example, the lab's experimenter PC) will do. (We recommend wired networks, though psynteract has been successfully tested via WiFi and there are no reasons why it should not work with wireless connections)
+The foundation underlying the server is an instance of [Apache CouchDB](https://couchdb.apache.org), a powerful database engine. CouchDB is open source, and freely available for all major platforms. We recommend that you install it on a computer within your lab's network; any typical desktop machine with a stable network connection (for example, the lab's experimenter PC) will do. (We recommend wired networks, though psynteract has been successfully tested via WiFi and there are no reasons why it should not work with wireless connections.)
 
 Thus, the first step is to [download and install](https://couchdb.apache.org/#download) a copy of CouchDB on your designated server. To do so, please download the appropriate package for your operating system, and follow the steps required by your operating system (i.e. start the installer on Windows; on Mac OS, download and copy the application into the appropriate folder; or install the CouchDB package supplied by your Linux distribution). You should then be able to start CouchDB as you would any other application.
 
@@ -24,7 +24,7 @@ The next step is to make sure that the CouchDB instance is accessible across the
 
 [screenshot?]
 
-One final step is still necessary, however: We need to create a database within CouchDB. To do so, please navigate to the URL you have opened above, but add `/_utils/`, for example `http://[IP-or-hostname]:5984/_utils/`. This will open the CouchDB Admin interface. From there, please *add a new database*, and give your new database a name (we suggest using `psynteract`, but you are free to choose).
+One final step is still necessary, however: We need to create a database within CouchDB. To do so, please navigate to the URL you have opened above, but add `/_utils/`, for example `http://[IP-or-hostname]:5984/_utils/`. This will open the CouchDB Admin interface. From there, please *create a new database*, and give your new database a name (we suggest using `psynteract`, but you are free to choose).
 
 ## Client
 
@@ -39,7 +39,7 @@ Whatever your operating system, please download the latest compressed [release v
 
 #### Windows
 
-To install the plugin and extension, please navigate to or create the folder `.opensesame` in the user's home directory (typically `[drive]:\Documents and Settings\[user name]\.opensesame`). Please copy contents of the folders `plugins` and `extensions` from the downloaded psynteract release into the corresponding folders within this directory (or create them first, if necessary).
+To install the plugin and extension, please copy the contents of the folders `plugins` and `extensions` from the downloaded psynteract release into the corresponding folders that OpenSesame searches for plugins and extensions. One option for this is to use the `plugins` and `extensions` folders in the OpenSesame installation directory. Please see the [OpenSesame documentation](http://osdoc.cogsci.nl/plug-ins/installation/) for additional options.
 
 #### Mac OS
 
@@ -80,7 +80,7 @@ The final step is to install the psynteract software and control panel on the Co
 
 ### OpenSesame
 
-Completing the installation from OpenSesame is as simple as opening the extensions menu and selecting "Install control panel on server" from the psynteract entry. Enter the URL on which you found your CouchDB installation earlier, followed by the name of the database you setup, for example `http://localhost:5984/psynteract/`.
+Completing the installation from OpenSesame is as simple as opening the extensions menu and selecting "Install control panel" from the psynteract entry. Enter the URL on which you found your CouchDB installation earlier, followed by the name of the database you setup, for example `http://localhost:5984/psynteract/`.
 You will be shown the URL of your control panel once the installation is completed. Be sure to make a bookmark, or otherwise consult the [finding the control panel URL](faq.md) from our FAQ. If the server is accessible over the network, this will complete the installation.
 
 ### Pure Python
@@ -96,4 +96,4 @@ install_psynteract_server(
 )
 ```
 
-Again, you will be shown the URL of the control panel once the installation is complete -- please be sure to make a note!.
+Again, you will be shown the URL of the control panel once the installation is complete -- please be sure to make a note.
