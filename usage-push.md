@@ -8,14 +8,15 @@ be accessed from all other clients.
 
 ## OpenSesame
 
- In OpenSesame, any data that is saved in local variables can be
-shared between clients. To indicate the points at which the data on the server
+In OpenSesame, any data that is saved in[experimental variables]
+(http://osdoc.cogsci.nl/usage/variables-and-conditional-statements/)
+can be shared between clients. To indicate the points at which the data on the server
 is updated, drag the *push* item into the experiment tree.
 
-By default, all local variables are made available in this way. Optionally, it
-is possible to restrict the selection of variables transmitted to the server via
+By default, all experimental variables are made available in this way. Optionally, 
+it is possible to restrict the selection of variables transmitted to the server via
 the lower panel of the push settings. To achieve this, enter the variable names
-separated by commas.
+separated by commas in the *Custom variable selection* field.
 
 ## Python
 
