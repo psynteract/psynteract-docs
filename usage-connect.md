@@ -9,7 +9,7 @@ is the core of the library.
 
 ## OpenSesame
 
-In OpenSesame, you can connect to the server by dragging the connection item
+In OpenSesame, you can connect to the server by dragging the connect item
 into your experiment. You'll probably want to place it toward the beginning of
 the study, so that you can use the connection afterward. All other functions
 depend on a connection having been made initially.
@@ -23,7 +23,7 @@ In pure Python, you build a connection by creating a connection object, as shown
 in the following:  
 
 ```python
-from psyinteract import Connection
+from psynteract import Connection
 
 ## Establish a new connection to a local server,
 ## through the variable c which can be used later
@@ -32,11 +32,10 @@ c = Connection(
     db_name='psynteract',
     design='stranger', # Type of design
     group_size=2, # Number of clients in a group
-    groupings_needed=1, # Number of distinct groupings needed
-    roles=['dictator', 'recipient'], # Assign roles if required
+    groupings_needed=1, # Number of unique groupings (see below)
+    roles=['proposer', 'responder'], # Assign roles if required
     ghosts=False, # Optionally activate ghost mode
     client_name='my_pc', # Optional human-readable client identifier
-    group='default', # Optional group
     initial_data={} # Optional initial data
 )
 ```
@@ -55,11 +54,13 @@ you'll probably want to insert its _IP address_ (which will look like
 you'll probably need a _host name_ such as `couch.my-institution.com`. If you
 haven't changed its settings, a CouchDB instance will be available on port
 `5984`. Thus, your total URI string will probably look something like
-`http://my_server.com:5984`.
+`http://my_server.com:5984`.<br>
+If your database is password protected, you need to specify the user name and
+password as follows: `http://user:password@my_server.com:5984`.
 
 The __database name__ is also central. Because a server with CouchDB can
 potentially store many separate databases, the client needs to know which one to
-use. You will have set this up during the installation.
+use. You will have set this up during the [installation](installation.md).
 
 The __design__ option determines how the users are allocated to groups. Choosing
 the *stranger* design allocates clients into groups at random, and a
@@ -80,8 +81,9 @@ __Offline mode__ enables you to test your experiment without connecting to an
 actual server. This means that the client will never wait for others, and that
 it will use dummy data in lieu of actual partners' responses. In OpenSesame,
 the client's own data will be used as a stand-in for the data from connected
-clients. In Python, it is possible to define dummy data that are substituted
-during calls to `get` (see below).
+clients (if the respective option is selected in [get](usage-get.md)). In Python,
+it is possible to define dummy data that are substituted during calls to
+[get](usage-get.md).
 
 __Ghost mode__ enables Psynteract to deal with numbers of participants that
 cannot be split evenly across the group size specified. Using this mode, excess
@@ -91,18 +93,22 @@ participant experiences from his or her fellow group members, but the 'ghosts'
 will not themselves affect the other participants -- the interaction is
 unidirectional.
 
-The number of __groupings needed__ represents the number of unique groupings
-needed by the experiment (as an integer). If this argument is supplied, and the
-number of groupings cannot be supplied (because there are to few participants to
-combine into groups), a warning is shown on the control panel. By default,
-only a single grouping will be generated.
+The number of __groupings needed__ represents the number of unique groupings needed
+by the experiment (as an integer). The default value (1) corresponds to a scenario
+where groups are only assigned once at the start of the experiment (which is done
+automatically when the session is started). If groupings are reassigned during the
+experiment (using [reassign](usage-reassign.md)), the number of total
+unique groupings needed has to be indicated in advance here.<br>
+If this argument is supplied, and the number of groupings cannot be supplied
+(because there are to few participants to combine into groups), a warning is shown
+on the control panel.
 
 ## Python-only
 
 The __client name__ is available to help you identify connected clients more
 easily. Any value set here is visible on the backend in the "name" column. The
 setting has no further technical relevance. In OpenSesame, this is automatically
-generated from the user ID entered when starting the experiment.
+generated from the user ID (`subject_nr`) entered when starting the experiment.
 
 __Initial data__ can be used to pass in any data that should be available in all
 clients from the get-go. For example, if you would like to later append choices
@@ -112,9 +118,9 @@ OpenSesame.
 ## OpenSesame-only
 
 __Identical random seeds__ can be applied to all clients to ensure that any
-randomization is performed in synchrony. The random seed is calculated from
-the session id.
+randomization within the experiment is performed in synchrony. The random seed
+is calculated from the session id.
 
-OpenSesame can be instructed to __display a message while waiting for the
-session to start__. If this is not set, any preceding screen will remain
-visible.
+OpenSesame can be instructed to __display a message while connecting and waiting
+for the session to start__. If this option is not checked, any preceding screen
+will remain visible while connecting.
