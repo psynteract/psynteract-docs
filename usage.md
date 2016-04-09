@@ -16,7 +16,7 @@ we have split these into separate pages:
   -- send data from a client to the server, making it available to the other connected clients
 * [Get](usage-get.md) <img src="https://raw.githubusercontent.com/psynteract/psynteract-os/master/plugins/psynteract_get/psynteract_get_large.png" align="right">
   -- retrieve data provided by the other clients
-* [Wait](usage-wait.md) <img src="https://raw.githubusercontent.com/psynteract/psynteract-os/master/plugins/psynteract_await/psynteract_await_large.png" align="right">
+* [Wait](usage-wait.md) <img src="https://raw.githubusercontent.com/psynteract/psynteract-os/master/plugins/psynteract_wait/psynteract_wait_large.png" align="right">
   -- pause an experiment until a specific condition is met on part of the other
   clients
 

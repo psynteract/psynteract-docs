@@ -1,6 +1,6 @@
-# Await
+# Wait
 
-<img src="https://raw.githubusercontent.com/psynteract/psynteract-os/master/plugins/psynteract_await/psynteract_await_large.png" align="right">
+<img src="https://raw.githubusercontent.com/psynteract/psynteract-os/master/plugins/psynteract_wait/psynteract_wait_large.png" align="right">
 
 Another vital component of an interactive experiment is temporal synchronization
 -- all participants should be at the same stage throughout the experiment. From
@@ -12,14 +12,14 @@ clients.
 
 ## OpenSesame
 
-To synchronize clients running OpenSesame, include the `await` item in your
+To synchronize clients running OpenSesame, include the `wait` item in your
 experiment. It ensures that each client will pause when the item is reached, and
 continue only if all other clients have also arrived at the same point in the
 experiment.
 
 ## Python
 
-A connection's **`await`** method can be used to pause until an arbitrary
+A connection's **`wait`** method can be used to pause until an arbitrary
 criterion is met on part of all connected clients.
 
 ### Parameters
@@ -42,7 +42,7 @@ panel:
 ## as shown above...
 
 ## The experiment begins:
-c.await(
+c.wait(
     # The first parameter contains the condition function,
     # in this case a simple check whether the document contains
     # the variable 'status', and whether it is set to the
