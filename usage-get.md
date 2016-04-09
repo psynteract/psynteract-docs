@@ -11,7 +11,7 @@ As for *push*, the *get* item in OpenSesame operates on [experimental variables]
 (http://osdoc.cogsci.nl/usage/variables-and-conditional-statements/). In
 particular, it will automatically fetch data previously pushed to the server by
 the local participant's partners, and make it available as experimental variables
-adding the respective partner prefix (e.g. `parner01_`)  to the variable name.
+adding the respective partner prefix (e.g. `partner01_`)  to the variable name.
 
 For example, if another player makes a response which is collected in the
 `response` variable in her OpenSesame instance and *pushed* to the server, once
