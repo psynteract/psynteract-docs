@@ -8,7 +8,7 @@ be accessed from all other clients.
 
 ## OpenSesame
 
-In OpenSesame, any data that is saved in[experimental variables]
+In OpenSesame, any data that is saved in [experimental variables]
 (http://osdoc.cogsci.nl/usage/variables-and-conditional-statements/)
 can be shared between clients. To indicate the points at which the data on the server
 is updated, drag the *push* item into the experiment tree.
