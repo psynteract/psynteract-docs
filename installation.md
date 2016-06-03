@@ -88,12 +88,13 @@ You will be shown the URL of your control panel once the installation is complet
 To complete the installation using Python alone, run the following commands from within your code or from the Python prompt:
 
 ```python
-from psynteract import install_psynteract_server
+import psynteract
 
-install_psynteract_server(
-    server_uri='http://[your-server-here]:5984',
-    db_name='psynteract'
+psynteract.install(
+    db_uri='http://[your-server-here]:5984/psynteract',
 )
 ```
 
-Again, you will be shown the URL of the control panel once the installation is complete -- please be sure to make a note.
+If you chose a different name for your database, you will need to replace the last part of the `uri` following the slash character.
+
+Again, you will be shown the URL of the control panel once the installation is complete.
