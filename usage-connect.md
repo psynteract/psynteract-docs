@@ -63,12 +63,14 @@ potentially store many separate databases, the client needs to know which one to
 use. You will have set this up during the [installation](installation.md).
 
 The __design__ option determines how the users are allocated to groups. Choosing
-the *stranger* design allocates clients into groups at random, and a
-reassignment of groups will again result in a random allocation. The *perfect
-stranger* design also allocates clients at random initially, but thereafter
-ensures that no two clients are in the same group again. Depending on the other
-design parameters chosen, the perfect stranger design requires significantly
-more participants overall.
+the *stranger* design (parameter value `'stranger'`) allocates clients into
+groups at random, and a reassignment of groups will again result in a random
+allocation. The *perfect stranger* design (please set the `design` parameter to
+`'perfect_stranger'`) also allocates clients at random initially, but thereafter
+ensures that no two clients are in the same group when groups are reassigned
+later (if only a single assignment is used, the designs do not differ).
+Depending on the other design parameters chosen, the perfect stranger design
+requires significantly more participants overall.
 
 The __group size__ defines the number of clients in a group.
 
